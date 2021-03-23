@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs') %>
+    <!-- /Header -->
+
+    <!-- Main -->
+    <main class="login-main">
+        <div class="form-container">
+            <div class="brand-container">
+                <img src="/system-images/signup_logo.svg" alt="brand" class="svg-logo">
+            </div>
+            <form action="" class="login-form">
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="field">
+                    <div class="lbl-pass">
+                        <label for="password">Password</label>
+                        <a href="#" class="forgot">Forgot Password?</a>
+                    </div>
+                    <input type="text" id="password" required>
+                </div>
+                <button class="submit">Login</button>
+                <p>Not registered yet? Click <a href="/register">here</a> to sign up.</p>
+            </form>
+        </div>
+        <button class="google-login"><i class="fab fa-google fa-1.9x"></i>Login with Google</button>
+        <button class="facebook-login"><i class="fab fa-facebook-square"></i> Login with Facebook</button>
+    </main>
+        
+        
+    
+    
+    <!-- /Main -->
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+    <!-- /Footer -->
+</body>
+</html>

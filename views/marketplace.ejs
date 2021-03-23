@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <!-- Header -->
+    <%- include('./partials/header.ejs') %>
+    <!-- /Header -->
+
+    <!-- Main -->
+    <main class="marketplace-main">
+        <div class="marketplace-main2">
+            <div class="panel-container">
+                <div class="my-account">
+                    <img src="/system-images/default-girl.jpg" alt="user-image" class="user-image">
+                    <div class="profile">
+                        <span class="user-name">Jane Doe</span>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <form action="" class="frm-search">
+                    <input type="text" class="search" placeholder="Search item">
+                    <i class="fa fa-search"></i>
+                </form>
+                <div class="filters">
+                    <h4>Filters</h4>
+                    <div class="location">
+                        <select name="location" class="sel-locations">
+                            <option value="Atimonan">Atimonan</option>
+                            <option value="Candelaria">Candelaria</option>
+                            <option value="Lucena">Lucena</option>
+                            <option value="Plaridel">Plaridel</option>
+                            <option value="Sariaya">Sariaya</option>
+                            <option value="Tayabas">Tayabas</option>
+                        </select>
+                    </div>
+                    <div class="radius">
+                        <select name="radius" class="sel-radius">
+                            <option value="1">1 kilometer</option>
+                            <option value="2">2 kilometers</option>
+                            <option value="5">5 kilometers</option>
+                            <option value="10">10 kilometers</option>
+                            <option value="20">20 kilometers</option>
+                            <option value="40">40 kilometers</option>
+                            <option value="60">60 kilometers</option>
+                            <option value="80">80 kilometers</option>
+                            <option value="100">100 kilometers</option>
+                            <option value="250">250 kilometers</option>
+                            <option value="500">500 kilometers</option>
+                        </select>
+                    </div>
+                </div>
+                    
+                <div class="categories">
+                    <h4>Categories</h4>
+                    <div class="category"><i class="fas fa-paw icon"></i><h5>Animals</h5></div>
+                    <div class="category"><i class="fas fa-tshirt icon"></i><h5>Apparel & Accessories</h5></div>
+                    <div class="category"><i class="fas fa-video icon"></i><h5>Arts & Entertainment</h5></div>
+                    <div class="category"><i class="fas fa-baby-carriage icon"></i><h5>Baby & Toddler</h5></div>
+                    <div class="category"><i class="fas fa-building icon"></i><h5>Business & Industrial</h5></div>
+                    <div class="category"><i class="fas fa-mobile-alt icon"></i><h5>Electronics</h5></div>
+                    <div class="category"><i class="fas fa-hamburger icon"></i><h5>Food & Beverages</h5></div>
+                    <div class="category"><i class="fas fa-couch icon"></i><h5>Furniture</h5></div>
+                    <div class="category"><i class="fas fa-heartbeat icon"></i><h5>Health</h5></div>
+                    <div class="category"><i class="fas fa-home icon"></i><h5>Home & Garden</h5></div>
+                    <div class="category"><i class="fab fa-steam-square icon"></i><h5>Software</h5></div>
+                    <div class="category"><i class="fas fa-table-tennis icon"></i><h5>Sports</h5></div>
+                    <div class="category"><i class="fas fa-puzzle-piece icon"></i><h5>Toys & Games</h5></div>
+                    <div class="category"><i class="fas fa-car-alt icon"></i><h5>Vehicles & Parts</h5></div>
+                </div>
+            </div>
+            <div class="posts-container">
+                <% if (posts.length > 0) { %>
+                    <% posts.forEach(post => { %> 
+                        <div class="post">
+                            <div class="display-image">
+                                <img src=<%= post.image %> alt="barter-image" class="post-image">
+                            </div>
+                            <h3 class="title"><%= post.title %></h3>
+                            <p class="location">Sariaya, Quezon</p>
+                            <p class="description"><%= post.description%></p>             
+                        </div>
+                    <% }); %> 
+                <% } %>
+            </div>
+            <div class="item-modal-container">
+                <div class="close"> 
+                    X
+                </div>
+                <div class="item-modal">
+                    <div class="slider-container">
+                        <div class="previous">
+                            <i class="fas fa-angle-left"></i>
+                        </div>
+                        <div class="next">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
+                        <div class="slider">
+                            <img src="post-images/guitar-image1.jpg" alt="guitar1" class="slider-img">
+                            <img src="post-images/guitar-image2.jpg" alt="guitar2" class="slider-img">
+                            <img src="post-images/guitar-image3.jpg" alt="guitar3" class="slider-img">
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="seller-info">
+                            <img src="/system-images/default-picture.jpg" alt="" class="seller-picture">
+                            <div class="seller-decription">
+                                <h3 class="seller-name">John Doe</h3>
+                                <h5 class="seller-location">Sariaya, Quezon</h5>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <h2 class="item-name">Guitar</h2>
+                            <p class="date-posted">posted 3 days ago</p>
+                            <p class="item-description">Lorem ninja ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut ninja wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit ninja lobortis nisl ut aliquip ex ea commodo consequat. </p><br>
+                            <p class="item-description"> Duis ninja autem vel eum iriure dolor in hendrerit in vulputate ninja velit esse molestie consequat, vel illum dolore eu feugiat nulla ninja facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi ninja non habent claritatem insitam;</p><br>
+                            <p class="item-description"> Duis ninja autem vel eum iriure dolor in hendrerit in vulputate ninja velit esse molestie consequat, vel illum dolore eu feugiat nulla ninja facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam ninja ipsum liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi ninja non habent claritatem insitam;</p>
+                                
+                        </div>   
+                        <div class="trade">
+                            <h5 class="trade-to">Trade to:</h5>
+                            <ul class="trade-to-list">
+                                <li>1 sack of rice</li>
+                                <li>1 case of red horse</li>
+                                <li>1 lechon baboy</li>
+                            </ul>
+                        </div>         
+                        <div class="message">
+                            <button class="btn-message"><i class="fas fa-comment-alt"></i> Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        
+    </main>
+    <!-- /Main -->
+
+    <!-- Footer -->
+    <%- include('./partials/footer.ejs') %>
+    <!-- /Footer -->
+</body>
+</html>
