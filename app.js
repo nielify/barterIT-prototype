@@ -21,7 +21,7 @@ app.set('view engine', 'ejs'); //register view engine as ejs
 
 //port
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`listening to port ${port}`)); 
+app.listen(PORT, () => console.log(`listening to port ${PORT}`)); 
 
 //importing routes
 const marketplaceRoute = require('./routes/marketplace');
