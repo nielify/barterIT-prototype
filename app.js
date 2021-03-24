@@ -9,7 +9,7 @@ const app = express();
 
 //Middlewares
 app.use(express.json()) //to get the req.body
-app.use(express.static(__dirname + 'public')); //static files
+app.use(express.static(__dirname, 'public')); //static files
 app.use(morgan('dev')); //logging
 
 //monngodb connection
