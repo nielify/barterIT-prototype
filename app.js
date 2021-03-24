@@ -13,15 +13,14 @@ app.use(express.static('public')); //static files
 app.use(morgan('dev')); //logging
 
 //monngodb connection
-const URI = 'mongodb+srv://Niel:0kK5ockK7u62YhlT@cluster-niel.zq3rs.mongodb.net/Barterdb?retryWrites=true&w=majority';
-mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }) 
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }) 
   .then(() => console.log("connected to db"))
   .catch((err) => console.log(err));
 
 app.set('view engine', 'ejs'); //register view engine as ejs
 
 //port
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`)); 
 
 //importing routes
