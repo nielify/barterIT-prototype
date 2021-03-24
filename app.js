@@ -20,8 +20,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 app.set('view engine', 'ejs'); //register view engine as ejs
 
 //port
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`listening on port ${port}`)); 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on port ${port}`)); 
 
 //importing routes
 const marketplaceRoute = require('./routes/marketplace');
